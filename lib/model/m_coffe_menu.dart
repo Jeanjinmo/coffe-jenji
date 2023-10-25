@@ -3,16 +3,13 @@ class CoffeMenuModel {
   String coffeCategory;
   String coffeDescription;
   String coffePrice;
-  // List<String> coffePriceDetail;
   String coffePhoto;
 
-  //constructor
   CoffeMenuModel({
     required this.coffeName,
     required this.coffeCategory,
     required this.coffeDescription,
     required this.coffePrice,
-    // required this.coffePriceDetail,
     required this.coffePhoto,
   });
 }

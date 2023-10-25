@@ -13,16 +13,15 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     Timer(
-      Duration(milliseconds: 2000),
+      const Duration(milliseconds: 2000),
       () async {
         await Navigator.pushReplacement(
           context,
           MaterialPageRoute(
             builder: (context) {
-              return HomeScreen();
+              return const HomeScreen();
             },
           ),
         );

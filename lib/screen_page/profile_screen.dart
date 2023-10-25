@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import '../extract_widget/kebijakan_privasi_item/kebijakan_privasi_item.dart';
+import '../extract_widget/kebijakan_privasi_item/kebijakan_privasi_title_item.dart';
+
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
 
@@ -11,7 +14,7 @@ class ProfileScreen extends StatelessWidget {
     return Scaffold(
       body: FutureBuilder(
         future: Future.delayed(
-          Duration(milliseconds: 500),
+          const Duration(milliseconds: 500),
         ),
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
@@ -50,9 +53,8 @@ class ProfileScreen extends StatelessWidget {
                           decoration: BoxDecoration(
                             shape: BoxShape.circle,
                             color: Colors.grey,
-                            image: DecorationImage(
-                              image: AssetImage(
-                                  'assets/images/profile.png'),
+                            image: const DecorationImage(
+                              image: AssetImage('assets/images/profile.png'),
                             ),
                             border: Border.all(
                               color: Colors.white,
@@ -68,25 +70,25 @@ class ProfileScreen extends StatelessWidget {
                         const EdgeInsets.only(top: 60, left: 24, right: 24),
                     child: Column(
                       children: [
-                        Text(
+                        const Text(
                           'Jean',
                           style: TextStyle(
                               color: Colors.green,
                               fontSize: 25,
                               fontWeight: FontWeight.w700),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 5,
                         ),
-                        Text(
+                        const Text(
                           'Junior Programmer',
                           style: TextStyle(
                               fontSize: 20, fontWeight: FontWeight.w400),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 10,
                         ),
-                        Align(
+                        const Align(
                           alignment: Alignment.centerLeft,
                           child: Text(
                             'Profile Pengembang',
@@ -94,22 +96,20 @@ class ProfileScreen extends StatelessWidget {
                                 fontWeight: FontWeight.bold, fontSize: 20),
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 10,
                         ),
-                        Container(
-                          child: Text(
-                            "Seorang pemula yang ingin belajar Flutter dari dasar dan mencoba mencapai tingat yang lebih tinggi.",
-                            style: TextStyle(fontSize: 18),
-                            textAlign: TextAlign.left,
-                          ),
+                        const Text(
+                          "Seorang pemula yang ingin belajar Flutter dari dasar dan mencoba mencapai tingat yang lebih tinggi.",
+                          style: TextStyle(fontSize: 18),
+                          textAlign: TextAlign.left,
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 10,
                         ),
                         Row(
                           children: [
-                            Text(
+                            const Text(
                               'Temukan saya : ',
                               style: TextStyle(fontSize: 20),
                             ),
@@ -119,20 +119,20 @@ class ProfileScreen extends StatelessWidget {
                                     Uri.parse('https://github.com/Jeanjinmo');
                                 _launchInBrowser(url);
                               },
-                              child: Text(
+                              child: const Text(
                                 'Github',
                                 style: TextStyle(fontSize: 20),
                               ),
                             )
                           ],
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 20,
                         ),
                         InkWell(
                           onTap: () {
-                            print('Privacy Policy di tekan');
-                            KebijakanPrivasiInfo(context);
+                            debugPrint('Privacy Policy di tekan');
+                            kebijakanPrivasiInfo(context);
                           },
                           child: const Center(
                             child: Row(
@@ -168,18 +168,19 @@ class ProfileScreen extends StatelessWidget {
     );
   }
 
-  Future<dynamic> KebijakanPrivasiInfo(BuildContext context) {
+  // Kebijakan privasi
+  Future<dynamic> kebijakanPrivasiInfo(BuildContext context) {
     return showModalBottomSheet(
       context: context,
       backgroundColor: Colors.brown.shade100,
       barrierColor: Colors.brown.withOpacity(0.5),
       isDismissible: true, // false -> tidak bisa back tanpa button
-      shape: RoundedRectangleBorder(
+      shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.vertical(
         top: Radius.circular(30),
       )),
       builder: (context) {
-        return Container(
+        return const SizedBox(
           height: 350,
           child: SingleChildScrollView(
             child: Column(
@@ -244,6 +245,7 @@ class ProfileScreen extends StatelessWidget {
     );
   }
 
+  // Url launcher
   Future<void> _launchInBrowser(Uri url) async {
     if (!await launchUrl(
       url,
@@ -251,56 +253,5 @@ class ProfileScreen extends StatelessWidget {
     )) {
       throw Exception('Could not launch $url');
     }
-  }
-}
-
-class KebijakanPrivasiIsiItem extends StatelessWidget {
-  const KebijakanPrivasiIsiItem({super.key, required this.isiItem});
-  final String isiItem;
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(left: 20.0),
-      child: Text(isiItem),
-    );
-  }
-}
-
-class KebijakanPrivasiTitleItem extends StatelessWidget {
-  const KebijakanPrivasiTitleItem({super.key, required this.titleName});
-  final String titleName;
-  @override
-  Widget build(BuildContext context) {
-    return Align(
-      alignment: Alignment.centerLeft,
-      child: Text(
-        '${titleName}',
-        style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
-        textAlign: TextAlign.start,
-      ),
-    );
-  }
-}
-
-class BackButtonItem extends StatelessWidget {
-  const BackButtonItem({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(top: 60, left: 15),
-      child: IconButton(
-        icon: Icon(
-          Icons.arrow_back,
-          size: 30,
-        ),
-        color: Colors.white,
-        onPressed: () {
-          Navigator.pop(context);
-        },
-      ),
-    );
   }
 }

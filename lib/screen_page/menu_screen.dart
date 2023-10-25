@@ -1,5 +1,5 @@
 import 'package:blur/blur.dart';
-import 'package:dicoding_submission_flutter_pemula/screen_page/coffe_menu_screen.dart';
+import 'package:dicoding_submission_flutter_pemula/screen_page/coffe_menu_screen/coffe_menu_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:material_dialogs/material_dialogs.dart';
 import 'package:material_dialogs/widgets/buttons/icon_button.dart';
@@ -11,7 +11,7 @@ class MenuScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           'Daftar Menu',
           style: TextStyle(color: Colors.white),
         ),
@@ -23,10 +23,10 @@ class MenuScreen extends StatelessWidget {
           Expanded(
             child: InkWell(
               onTap: () {
-                print('Menu Kopi');
+                debugPrint('Menu Kopi');
                 Navigator.push(context, MaterialPageRoute(
                   builder: (context) {
-                    return CoffeMenuScreen();
+                    return const CoffeMenuScreen();
                   },
                 ));
               },
@@ -43,7 +43,7 @@ class MenuScreen extends StatelessWidget {
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Text(
+                          const Text(
                             'Coffe',
                             style: TextStyle(
                               color: Colors.white,
@@ -51,10 +51,10 @@ class MenuScreen extends StatelessWidget {
                               fontWeight: FontWeight.bold,
                             ),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 5,
                           ),
-                          Text(
+                          const Text(
                             'Coffe Berkualitas',
                             style: TextStyle(
                               color: Colors.white,
@@ -63,7 +63,7 @@ class MenuScreen extends StatelessWidget {
                           ).frosted(
                               blur: 5,
                               borderRadius: BorderRadius.circular(5),
-                              padding: EdgeInsets.all(5),
+                              padding: const EdgeInsets.all(5),
                               frostColor: Colors.black)
                         ],
                       ),
@@ -77,7 +77,7 @@ class MenuScreen extends StatelessWidget {
           Expanded(
             child: InkWell(
               onTap: () {
-                print('Menu Special Drink');
+                debugPrint('Menu Special Drink');
                 Dialogs.materialDialog(
                   msg:
                       'Menu Special Drink belum tersedia, pilih Menu Coffe untuk melanjutkan',
@@ -94,7 +94,7 @@ class MenuScreen extends StatelessWidget {
                       text: 'Ok',
                       // iconData: Icons.delete,
                       color: Colors.green,
-                      textStyle: TextStyle(color: Colors.white),
+                      textStyle: const TextStyle(color: Colors.white),
                       // iconColor: Colors.white,
                     ),
                   ],
@@ -113,7 +113,7 @@ class MenuScreen extends StatelessWidget {
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Text(
+                          const Text(
                             'Special Drink',
                             style: TextStyle(
                               color: Colors.white,
@@ -121,10 +121,10 @@ class MenuScreen extends StatelessWidget {
                               fontWeight: FontWeight.bold,
                             ),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 5,
                           ),
-                          Text(
+                          const Text(
                             'Pilihan Minuman Segar Nikmat',
                             style: TextStyle(
                               color: Colors.white,
@@ -133,7 +133,7 @@ class MenuScreen extends StatelessWidget {
                           ).frosted(
                               blur: 5,
                               borderRadius: BorderRadius.circular(5),
-                              padding: EdgeInsets.all(5),
+                              padding: const EdgeInsets.all(5),
                               frostColor: Colors.black),
                         ],
                       ),
@@ -147,7 +147,7 @@ class MenuScreen extends StatelessWidget {
           Expanded(
             child: InkWell(
               onTap: () {
-                print('Menu Sarapan Pagi Penyemangat');
+                debugPrint('Menu Sarapan Pagi Penyemangat');
                 Dialogs.materialDialog(
                   msg:
                       'Menu Breakfast belum tersedia, pilih Menu Coffe untuk melanjutkan',
@@ -164,7 +164,7 @@ class MenuScreen extends StatelessWidget {
                       text: 'Ok',
                       // iconData: Icons.delete,
                       color: Colors.green,
-                      textStyle: TextStyle(color: Colors.white),
+                      textStyle: const TextStyle(color: Colors.white),
                       // iconColor: Colors.white,
                     ),
                   ],
@@ -183,7 +183,7 @@ class MenuScreen extends StatelessWidget {
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Text(
+                          const Text(
                             'Breakfast',
                             style: TextStyle(
                               color: Colors.white,
@@ -191,10 +191,10 @@ class MenuScreen extends StatelessWidget {
                               fontWeight: FontWeight.bold,
                             ),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 5,
                           ),
-                          Text(
+                          const Text(
                             'Sarapan Pagi Penyemangat',
                             style: TextStyle(
                               color: Colors.white,
@@ -203,7 +203,7 @@ class MenuScreen extends StatelessWidget {
                           ).frosted(
                               blur: 5,
                               borderRadius: BorderRadius.circular(5),
-                              padding: EdgeInsets.all(5),
+                              padding: const EdgeInsets.all(5),
                               frostColor: Colors.black)
                         ],
                       ),
