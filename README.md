@@ -1,16 +1,7 @@
-# dicoding_submission_flutter_pemula
+Coffe Shop Breakfast UI Mboile App Flutter
 
-Submission Project Flutter Pemula Dicoding
+For -> Submission Flutter Dicoding
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Referensi UI:
+https://www.behance.net/gallery/27688929/E-commerce-UI-Kit-(Freebie)?tracking_source=search_projects_featured_date|mobile+app+coffe+shop
+https://www.behance.net/gallery/163124735/Coffee-app?tracking_source=search_projects|mobile+apps+coffe+shop+ui
