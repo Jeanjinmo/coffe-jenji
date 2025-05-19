@@ -16,6 +16,7 @@ class RekomendasiItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Stack(
+      alignment: Alignment.bottomCenter,
       children: [
         ClipRRect(
           borderRadius: BorderRadius.circular(20),
@@ -27,56 +28,53 @@ class RekomendasiItem extends StatelessWidget {
             height: 270,
           ),
         ),
-        Positioned(
-          bottom: 1,
-          child: Container(
-            width: 230,
-            height: 110,
-            decoration: BoxDecoration(
-              borderRadius: const BorderRadius.only(
-                bottomRight: Radius.circular(20),
-                bottomLeft: Radius.circular(20),
-              ),
-              color: Colors.black.withOpacity(0.2),
+        Container(
+          width: 230,
+          height: 110,
+          decoration: BoxDecoration(
+            borderRadius: const BorderRadius.only(
+              bottomRight: Radius.circular(20),
+              bottomLeft: Radius.circular(20),
             ),
-            child: Padding(
-              padding: const EdgeInsets.all(8),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    // 'Cappucino',
-                    nameMenu,
-                    style: const TextStyle(
-                      color: Colors.white,
-                      fontSize: 18,
-                      fontWeight: FontWeight.w600,
-                    ),
+            color: Colors.black.withOpacity(0.2),
+          ),
+          child: Padding(
+            padding: const EdgeInsets.all(8),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  // 'Cappucino',
+                  nameMenu,
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 18,
+                    fontWeight: FontWeight.w600,
                   ),
-                  Text(
-                    // 'Kopi Hitam',
-                    nameCategoryMenu,
-                    style: TextStyle(
-                      color: Colors.white.withOpacity(0.8),
-                      fontSize: 15,
-                      fontWeight: FontWeight.w400,
-                    ),
+                ),
+                Text(
+                  // 'Kopi Hitam',
+                  nameCategoryMenu,
+                  style: TextStyle(
+                    color: Colors.white.withOpacity(0.8),
+                    fontSize: 15,
+                    fontWeight: FontWeight.w400,
                   ),
-                  Text(
-                    // 'Cappuccino adalah minuman kopi yang dibuat dengan campuran espresso, susu panas, dan busa susu.',
-                    descMenu,
-                    overflow: TextOverflow.ellipsis,
-                    style: TextStyle(
-                      color: Colors.white.withOpacity(0.9),
-                      fontSize: 14,
-                      fontWeight: FontWeight.w400,
-                    ),
-                  )
-                ],
-              ),
+                ),
+                Text(
+                  // 'Cappuccino adalah minuman kopi yang dibuat dengan campuran espresso, susu panas, dan busa susu.',
+                  descMenu,
+                  overflow: TextOverflow.ellipsis,
+                  style: TextStyle(
+                    color: Colors.white.withOpacity(0.9),
+                    fontSize: 14,
+                    fontWeight: FontWeight.w400,
+                  ),
+                ),
+              ],
             ),
           ),
-        )
+        ),
       ],
     );
   }

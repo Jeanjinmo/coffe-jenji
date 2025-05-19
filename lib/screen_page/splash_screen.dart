@@ -11,22 +11,20 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
+  // pake statefull
   @override
   void initState() {
     super.initState();
-    Timer(
-      const Duration(milliseconds: 2000),
-      () async {
-        await Navigator.pushReplacement(
-          context,
-          MaterialPageRoute(
-            builder: (context) {
-              return const HomeScreen();
-            },
-          ),
-        );
-      },
-    );
+    Timer(const Duration(milliseconds: 2000), () async {
+      await Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(
+          builder: (context) {
+            return const HomeScreen();
+          },
+        ),
+      );
+    });
   }
 
   @override
@@ -34,10 +32,7 @@ class _SplashScreenState extends State<SplashScreen> {
     return Scaffold(
       backgroundColor: Colors.brown,
       body: Center(
-        child: Image.asset(
-          'assets/images/splash_cover.png',
-          fit: BoxFit.cover,
-        ),
+        child: Image.asset('assets/images/splash_cover.png', fit: BoxFit.cover),
       ),
     );
   }

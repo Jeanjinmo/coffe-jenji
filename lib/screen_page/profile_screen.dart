@@ -13,9 +13,7 @@ class ProfileScreen extends StatelessWidget {
     Orientation checkOrientation = MediaQuery.of(context).orientation;
     return Scaffold(
       body: FutureBuilder(
-        future: Future.delayed(
-          const Duration(milliseconds: 500),
-        ),
+        future: Future.delayed(const Duration(milliseconds: 500)),
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
             return SafeArea(
@@ -43,9 +41,10 @@ class ProfileScreen extends StatelessWidget {
                       Positioned(
                         // Profile image
                         bottom: -50,
-                        left: checkOrientation == Orientation.portrait
-                            ? MediaQuery.of(context).size.width / 2 - 60
-                            : MediaQuery.of(context).size.width / 2 - 60,
+                        left:
+                            checkOrientation == Orientation.portrait
+                                ? MediaQuery.of(context).size.width / 2 - 60
+                                : MediaQuery.of(context).size.width / 2 - 60,
                         child: Container(
                           // margin: EdgeInsets.only(left: 10),
                           width: 130,
@@ -56,57 +55,54 @@ class ProfileScreen extends StatelessWidget {
                             image: const DecorationImage(
                               image: AssetImage('assets/images/profile.png'),
                             ),
-                            border: Border.all(
-                              color: Colors.white,
-                              width: 5,
-                            ),
+                            border: Border.all(color: Colors.white, width: 5),
                           ),
                         ),
                       ),
                     ],
                   ),
                   Padding(
-                    padding:
-                        const EdgeInsets.only(top: 60, left: 24, right: 24),
+                    padding: const EdgeInsets.only(
+                      top: 60,
+                      left: 24,
+                      right: 24,
+                    ),
                     child: Column(
                       children: [
                         const Text(
                           'Jean',
                           style: TextStyle(
-                              color: Colors.green,
-                              fontSize: 25,
-                              fontWeight: FontWeight.w700),
+                            color: Colors.green,
+                            fontSize: 25,
+                            fontWeight: FontWeight.w700,
+                          ),
                         ),
-                        const SizedBox(
-                          height: 5,
-                        ),
+                        const SizedBox(height: 5),
                         const Text(
-                          'Junior Programmer',
+                          'Junior Flutter Developer',
                           style: TextStyle(
-                              fontSize: 20, fontWeight: FontWeight.w400),
+                            fontSize: 20,
+                            fontWeight: FontWeight.w400,
+                          ),
                         ),
-                        const SizedBox(
-                          height: 10,
-                        ),
+                        const SizedBox(height: 10),
                         const Align(
                           alignment: Alignment.centerLeft,
                           child: Text(
                             'Profile Pengembang',
                             style: TextStyle(
-                                fontWeight: FontWeight.bold, fontSize: 20),
+                              fontWeight: FontWeight.bold,
+                              fontSize: 20,
+                            ),
                           ),
                         ),
-                        const SizedBox(
-                          height: 10,
-                        ),
+                        const SizedBox(height: 10),
                         const Text(
-                          "Seorang pemula yang ingin belajar Flutter dari dasar dan mencoba mencapai tingat yang lebih tinggi.",
+                          "Seorang Softwere Developer yang saat ini berfokus dalam belajar dan membuat aplikasi Mobile terkhusus memakai Fframework Flutter.",
                           style: TextStyle(fontSize: 18),
                           textAlign: TextAlign.left,
                         ),
-                        const SizedBox(
-                          height: 10,
-                        ),
+                        const SizedBox(height: 10),
                         Row(
                           children: [
                             const Text(
@@ -115,20 +111,19 @@ class ProfileScreen extends StatelessWidget {
                             ),
                             TextButton(
                               onPressed: () async {
-                                final url =
-                                    Uri.parse('https://github.com/Jeanjinmo');
+                                final url = Uri.parse(
+                                  'https://github.com/Jeanjinmo',
+                                );
                                 _launchInBrowser(url);
                               },
                               child: const Text(
                                 'Github',
                                 style: TextStyle(fontSize: 20),
                               ),
-                            )
+                            ),
                           ],
                         ),
-                        const SizedBox(
-                          height: 20,
-                        ),
+                        const SizedBox(height: 20),
                         InkWell(
                           onTap: () {
                             debugPrint('Privacy Policy di tekan');
@@ -138,13 +133,8 @@ class ProfileScreen extends StatelessWidget {
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                Icon(
-                                  Icons.privacy_tip,
-                                  size: 30,
-                                ),
-                                SizedBox(
-                                  width: 10,
-                                ),
+                                Icon(Icons.privacy_tip, size: 30),
+                                SizedBox(width: 10),
                                 Text(
                                   'Kebijakan Privasi',
                                   style: TextStyle(
@@ -155,7 +145,7 @@ class ProfileScreen extends StatelessWidget {
                               ],
                             ),
                           ),
-                        )
+                        ),
                       ],
                     ),
                   ),
@@ -176,67 +166,54 @@ class ProfileScreen extends StatelessWidget {
       barrierColor: Colors.brown.withOpacity(0.5),
       isDismissible: true, // false -> tidak bisa back tanpa button
       shape: const RoundedRectangleBorder(
-          borderRadius: BorderRadius.vertical(
-        top: Radius.circular(30),
-      )),
+        borderRadius: BorderRadius.vertical(top: Radius.circular(30)),
+      ),
       builder: (context) {
         return const SizedBox(
-          height: 350,
+          height: 500,
           child: SingleChildScrollView(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Padding(
-                  padding:
-                      EdgeInsets.only(top: 30, left: 24, right: 24, bottom: 16),
+                  padding: EdgeInsets.only(
+                    top: 30,
+                    left: 24,
+                    right: 24,
+                    bottom: 16,
+                  ),
                   child: Text(
                     'Kebijakan Privasi',
                     style: TextStyle(fontSize: 30, fontWeight: FontWeight.w500),
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.symmetric(vertical: 10, horizontal: 25),
+                  padding: EdgeInsets.symmetric(vertical: 15, horizontal: 25),
                   child: Column(
                     children: [
-                      KebijakanPrivasiTitleItem(
-                        titleName: '1. Data Apps',
-                      ),
-                      SizedBox(
-                        height: 5,
-                      ),
+                      KebijakanPrivasiTitleItem(titleName: '1. Data Apps'),
+                      SizedBox(height: 5),
                       KebijakanPrivasiIsiItem(
                         isiItem:
                             'Coffe Shop Jenji memakai data makanan dan minuman yang ditampilkan pada aplikasi Coffe Shop ini didapat dari google. ',
                       ),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      KebijakanPrivasiTitleItem(
-                        titleName: '2. Informasi Apps',
-                      ),
-                      SizedBox(
-                        height: 5,
-                      ),
+                      SizedBox(height: 10),
+                      KebijakanPrivasiTitleItem(titleName: '2. Informasi Apps'),
+                      SizedBox(height: 5),
                       KebijakanPrivasiIsiItem(
                         isiItem:
                             'Coffe Shop Jenji adalah toko kopi yang menawarkan berbagai jenis minuman dan makanan.',
                       ),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      KebijakanPrivasiTitleItem(
-                        titleName: '3. Data Pengguna',
-                      ),
-                      SizedBox(
-                        height: 5,
-                      ),
+                      SizedBox(height: 10),
+                      KebijakanPrivasiTitleItem(titleName: '3. Data Pengguna'),
+                      SizedBox(height: 5),
                       KebijakanPrivasiIsiItem(
                         isiItem:
                             'User tidak perlu menginputkan apapun dalam menjalankan aplikasi',
                       ),
                     ],
                   ),
-                )
+                ),
               ],
             ),
           ),
@@ -247,10 +224,7 @@ class ProfileScreen extends StatelessWidget {
 
   // Url launcher
   Future<void> _launchInBrowser(Uri url) async {
-    if (!await launchUrl(
-      url,
-      mode: LaunchMode.externalApplication,
-    )) {
+    if (!await launchUrl(url, mode: LaunchMode.externalApplication)) {
       throw Exception('Could not launch $url');
     }
   }
